@@ -12,11 +12,10 @@ for i in range(1, len(a) + 1):
             test[i][j] = test[i-1][j-1] + 1
             if ans < test[i][j]:
                 ans = test[i][j]
-                pos = j - 1
-                print(b[pos])
 
-print(test[i][j])
-print(b[pos-1])
+
+print(ans)
+
 
 
 
@@ -38,22 +37,22 @@ print(b[pos-1])
 #             cntB = 0
 
 
-# def lcs_substring(a, b):
-#     for compare_name in a:
-#         LCS = [[0] * (len(compare_name) + 1) for i in range(len(b) + 1)]
+# def lcs_substring(n_list, input_name):
+#     for compare_name in n_list:
+#         LCS = [[0] * (len(compare_name) + 1) for i in range(len(input_name) + 1)]
 #         ans = 0
 #         pos = 0
 #
-#         for i in range(1, len(b) + 1):
+#         for i in range(1, len(input_name) + 1):
 #             for j in range(1, len(compare_name) + 1):
-#                 if b[i - 1] == compare_name[j - 1]:
+#                 if input_name[i - 1] == compare_name[j - 1]:
 #                     LCS[i][j] = LCS[i - 1][j - 1] + 1
 #                     # 매칭된 '연속적인' 문자열의 길이를 체크(가장 큰 값을 넣어줌)
 #                     if ans < LCS[i][j]:
 #                         ans = LCS[i][j]
 #                         pos = j - 1  # 제일 긴 위치의 position을 구함
 #
-#         print("- {}와 {}\n  매칭 길이 = {}".format(compare_name, b, ans))
+#         print("- {}와 {}\n  매칭 길이 = {}".format(compare_name, input_name, ans))
 #
 #         # 매칭된 문자 출력
 #         str = ''
@@ -62,5 +61,3 @@ print(b[pos-1])
 #                 str += compare_name[pos - i]
 #             str = "".join(str)
 #             print("  매칭된 문자열 : {}\n".format(str))
-#
-# lcs_substring(a, b)

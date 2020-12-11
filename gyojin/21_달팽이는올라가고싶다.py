@@ -1,17 +1,4 @@
+import math
 
-
-a, b, v = map(str, input().split())
-a = int(a)
-b = int(b)
-v = int(v)
-pos = 0
-day = 1
-
-while pos < v:
-    pos += a
-    if pos >= v:
-        print(day)
-        break
-    else:
-        pos -= b
-        day += 1
+a, b, v = map(int, input().split())
+print(math.ceil((v-a) / (a-b) + 1))
