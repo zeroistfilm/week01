@@ -1,3 +1,7 @@
 # https://www.acmicpc.net/problem/2557
 
-print("Hello World!")
+
+def main():
+    print("Hello World!")
+
+main()
