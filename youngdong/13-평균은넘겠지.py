@@ -10,4 +10,6 @@ for i in range(N):
 for score in scores:
     studentsNumber = score[0]
     average = sum(score[1:])/len(score[1:])
+    higherNumber = len([x for x in score[1:] if x>average])
+    print(f'{higherNumber/studentsNumber*100:.3f}%')
 
