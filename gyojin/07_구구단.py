@@ -1,7 +1,5 @@
 
 
-a, b = map(int, input().split())
-
 x = int(input())
 
 for i in range(1, 10):
