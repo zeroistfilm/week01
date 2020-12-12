@@ -1,7 +1,5 @@
 
 
-# a, b = map(int, input().split("/n"))
-
 year = int(input())
 
 if year % 4 == 0:

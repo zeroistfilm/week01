@@ -1,7 +1,5 @@
 
 
-# a, b = map(int, input().split("/n"))
-
 score = int(input())
 
 if score >= 90:
@@ -12,6 +10,6 @@ elif score >= 70:
     print('C')
 elif score >= 60:
     print('D')
-else: print('F')
-
+else:
+    print('F')
 
