@@ -2,3 +2,4 @@
 
 sentence = list(map(str,input().strip().split()))
 print(len(sentence))
+print(input().split())
