@@ -2,7 +2,6 @@
 
 def idx_prime(n: int) -> list:
     seive = [True] * (n+1)
-    m = int(n ** 0.5) + 1
     for j in range(2, n):
         if seive[j] is True:
             for k in range(j+j, n+1, j):
