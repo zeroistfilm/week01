@@ -1,4 +1,5 @@
 # https://www.acmicpc.net/problem/10872
+# OK
 
 N = int(input())
 
