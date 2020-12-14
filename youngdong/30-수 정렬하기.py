@@ -1,5 +1,5 @@
 # https://www.acmicpc.net/problem/2750
-
+# OK
 N = int(input())
 
 numbers=[]

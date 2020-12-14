@@ -1,5 +1,5 @@
 # https://www.acmicpc.net/problem/1065
-
+# OK
 M=input()
 
 N=[]

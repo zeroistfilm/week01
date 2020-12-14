@@ -1,5 +1,5 @@
 # https://www.acmicpc.net/problem/2628
-
+# OK
 size = list(map(int, input().split()))
 times = int(input())
 methods = []
