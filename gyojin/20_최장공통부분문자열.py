@@ -1,21 +1,28 @@
-<<<<<<< HEAD
 
 
-a = input()
-b = input()
+inp = input()
+comp = input()
 ans = 0
 pos = 0
-test = [[0] * (len(b) + 1)] * (len(a) + 1)
+ansStr = ''
+test = [[0] * (len(comp) + 1)] * (len(inp) + 1)
 
-for i in range(1, len(a) + 1):
-    for j in range(1, len(b) + 1):
-        if a[i-1] == b[j-1]:
+for i in range(1, len(inp)+1):
+    for j in range(1, len(comp)+1):
+        if inp[i-1] == comp[j-1]:
             test[i][j] = test[i-1][j-1] + 1
             if ans < test[i][j]:
                 ans = test[i][j]
+                print(ans)
+                pos = j - 1
 
+
+if pos >= 0:
+    for i in range(ans-1, -1, -1):
+        ansStr += comp[pos - i]
 
 print(ans)
+print(ansStr)
 
 
 
