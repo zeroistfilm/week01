@@ -9,13 +9,13 @@ words=[]
 for i in range(N):
     A=sys.stdin.readline()
     if not A[:-1] in words:
-        words.append(A[:-1])
+        words.append(A[:-1]) #리스트에 단어 넣기
 
 wordslen=[]
 for i in range(len(words)):
-    wordslen.append(len(words[i]))
+    wordslen.append(len(words[i])) #길이 리스트 만들기
 
-arranged=[None]*(max(wordslen)+1)
+arranged=[None]*(max(wordslen)+1) #
 
 
 tmp=[]
