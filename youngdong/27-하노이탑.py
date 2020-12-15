@@ -2,11 +2,11 @@
 
 N = int(input())
 
-def hanoi(num, frm, to, other):
+def hanoi(num, x, y):
     if num == 0: return 0
-    hanoi(num - 1, frm, other, to)  # 하나 적은 원반을 목적지가 아닌 다른 곳으로
-    print(f'{frm} {to}')
-    hanoi(num - 1, other, to, frm)  # 다른곳에
+    hanoi(num - 1, x, 6-x-y)  # 하나 적은 원반을 목적지가 아닌 다른 곳으로
+    print(f'{x} {y}')
+    hanoi(num - 1, 6-x-y, y)  # 다른곳에
 
 
 def hanoicount(N):
@@ -16,11 +16,6 @@ def hanoicount(N):
     return hanoicount(N - 1) * 2 + 1
 
 print(hanoicount(N))
-if N % 2 == 0:
-    to = 2
-    other = 3
-else:
-    to = 3
-    other = 2
-if N<20:
-    hanoi(N, 1, to, other)
+
+if N<=20:
+    hanoi(N, 1, 3)
