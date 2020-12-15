@@ -33,11 +33,7 @@ def check_position(N,r,c):
 
     quadrantsize = int(Matrixsize / 4)
     count.append(quadrantsize * (Q-1))
-
     check_position(N-1, r,c)
-
-
-
 
 
 

@@ -1,24 +1,19 @@
 #https://www.acmicpc.net/problem/10989
+import sys
 
-N = int(input())
+N = int(sys.stdin.readline())
 
-numbers=[]
+numbers=[0]*10001
 for i in range(N):
-    numbers.append(int(input()))
+    numbers[int(sys.stdin.readline())]+=1
 
-distribution=[0]*(max(numbers)+1)
 
-for i in range(N):
-    distribution[numbers[i]]+=1
+for i in range(len(numbers)):
+    if not numbers[i] ==0:
+        # print(f'{i} in numbers: {numbers[i]}')
+        if numbers[i]>1:
+            for j in range(numbers[i]):
+                print(str(i))
+        else:
+            print(str(i))
 
-for i in range(1,len(distribution)):
-    distribution[i]=distribution[i-1]+distribution[i]
-
-result = [0] * len(numbers)
-
-for i in range(N-1,-1,-1): #-1 이면 직전까지인 0까지 간다.
-    result[distribution[numbers[i]]-1]=numbers[i]
-    distribution[numbers[i]]-=1
-
-for i in result:
-    print(i)
