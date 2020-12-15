@@ -3,43 +3,49 @@
 
 N, r, c = map(int, input().split())
 
-M = [[0 for i in range(2 ** (N))] for j in range(2 ** (N))]
+
+def check_position(N,r,c):
+
+    sizelength = 2 ** (N)
+    Matrixsize=sizelength*sizelength
 
 
-def check_position(M,r,c):
-    if len(M)==1:
+    if sizelength==1:
         return 0
-    if r < (len(M) // 2):
-        if c < (len(M) // 2):
+    if r < (sizelength // 2):
+        if c < (sizelength // 2):
             Q = 1
+            r=r
+            c=c
         else:
             Q = 2
+            r=r
+            c=c-sizelength // 2
     else:
-        if c < (len(M) // 2):
+        if c < (sizelength// 2):
             Q = 3
+            r=r-sizelength // 2
+            c=c
         else:
             Q = 4
-    totalsize, quadrantsize = get_size(M)
+            r = r - sizelength // 2
+            c = c - sizelength // 2
+
+    quadrantsize = int(Matrixsize / 4)
+    count.append(quadrantsize * (Q-1))
+
+    check_position(N-1, r,c)
 
 
-    count = quadrantsize * Q
 
 
 
 
-    return Q,count-1
+count=[]
+check_position(N,r,c)
+print(sum(count))
 
-
-
-def get_size(M):
-    totalsize = len(M[0]) * len(M[0])
-    quadrantsize = int(totalsize / 4)
-    return totalsize,quadrantsize
-    # postion check
-
-
-get_size(M)
-print(check_position(M,r,c))
-for i in range(len(M)):
-    print(M[i])
+#
+# for i in range(len(M)):
+#     print(M[i])
 
