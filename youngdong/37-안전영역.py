@@ -1,7 +1,7 @@
 # https://www.acmicpc.net/problem/2468
 import sys
 import copy
-sys.setrecursionlimit(100000)
+sys.setrecursionlimit(10000000000000)
 
 
 
