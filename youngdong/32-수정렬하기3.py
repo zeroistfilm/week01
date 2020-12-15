@@ -1,5 +1,6 @@
 #https://www.acmicpc.net/problem/10989
 import sys
+#도수정렬
 
 N = int(sys.stdin.readline())
 
