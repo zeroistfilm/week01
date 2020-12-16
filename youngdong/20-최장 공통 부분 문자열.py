@@ -1,15 +1,18 @@
 # https://www.acmicpc.net/problem/9249
+import sys
+#
+# A=sys.stdin.readline()
+# B=sys.stdin.readline()
+A='yeshowmuchiloveyoumydearmotherreallyicannotbelieveit'
+B='yeaphowmuchiloveyoumydearmother'
 
-A = input()
-B=input()
-
-list=[['-' for i in range(len(A))] for i in range(len(B))]
+list=[[0 for i in range(len(A))] for i in range(len(B))]
 
 
 for i in range(len(A)):
     for j in range(len(B)):
         if A[i]==B[j]:
-            list[j][i]='O'
+            list[j][i]=1
 
 # for i in list:
 #     print(i)
@@ -22,14 +25,14 @@ def find_str(i,j): #i=x j=y
     if j >= len(B)-1 or i >= len(A)-1:
         return 0
 
-    if list[j + 1][i + 1]=='-' :
+    if list[j + 1][i + 1]==0 :
         return 0
 
-    if list[j + 1][i + 1]=='O':
+    if list[j + 1][i + 1]==1:
         count+=1
         find_str(i+1, j+1)
     output.append([y,count])
-    # print('index',x,y,'length of word: ',count)
+    #print('index',x,y,'length of word: ',count)
 
     count=0
 
@@ -50,9 +53,5 @@ for i in range(len(output)):
         max = output[i][1]
         index = output[i][0]
 
-print(max)
-print(B[index+1:max+index+1])
-
-
-
-
+print(max+1)
+print(B[index:max+index+1])

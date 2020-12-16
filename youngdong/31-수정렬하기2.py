@@ -17,6 +17,8 @@ m=2
 # 1 2
 # 0 1
 # print(numbers)
+# 쉘정렬 교님님꺼 참고하기
+
 while h>0:
     for i in range(h, N):
         j=i-h

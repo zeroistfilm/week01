@@ -1,7 +1,7 @@
 # https://www.acmicpc.net/problem/2468
 import sys
 import copy
-sys.setrecursionlimit(10000000000000)
+sys.setrecursionlimit(1000000000)
 
 
 
@@ -71,7 +71,11 @@ for i in range(1,max(map(max, land))):# 가장 높은 곳까지 물이 찰 때
     countlist.append(count)
     count=0
 
-print(max(countlist))
+if countlist==[]:
+    max=1
+else:
+    max =max(countlist)
+print(max)
 
 
 

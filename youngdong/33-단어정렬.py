@@ -1,6 +1,7 @@
 # https://www.acmicpc.net/problem/1181
 
 #  ㄴ길이 리스트, 분포리스
+# default dict
 import sys
 
 N = int(sys.stdin.readline())
