@@ -1,4 +1,4 @@
-
+# https://www.acmicpc.net/problem/9663
 
 n = int(input())
 
