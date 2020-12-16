@@ -29,27 +29,27 @@ def insertion_sort(a: list):
             j -= 1
         a[j] = tmp
 
-
+# 검색 범위의 맨 앞 원소 index
 # 이진 삽입 정렬
 def binary_insertion_sort(a: list):
     n = len(a)
     for i in range(n):
         key = a[i]
-        pl = 0
-        pr = i - 1
+        pl = 0                              # 검색 범위의 맨 앞 원소 index
+        pr = i - 1                          # 검색 범위의 맨 뒤 원소 index
 
         while True:
-            pc = (pl + pr) // 2
-            if a[pc] == key:
+            pc = (pl + pr) // 2             # 검색 범위의 가운데 원소 index
+            if a[pc] == key:                # 검색 성공
                 break
             elif a[pc] > key:
-                pl = pc + 1
+                pl = pc + 1                 # 검색 범위를 뒤쪽 절반으로 좁힘
             else:
-                pr = pc - 1
+                pr = pc - 1                 # 검색 범위를 앞쪽 절반으로 좁힘
             if pl > pr:
                 break
 
-        pd = pc + 1 if pl <= pr else pr + 1
+        pd = pc + 1 if pl <= pr else pr + 1 # 삽입해야 할 위치의 인덱스
 
         for j in range(i, pd, -1):
             a[j] = a[j-1]

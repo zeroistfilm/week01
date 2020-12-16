@@ -6,10 +6,14 @@ num = list(int(input()) for i in range(n))
 # 버블 정렬
 def bubble_sort(a: list) -> None:
     seq = len(a)-1
-    for i in range(seq):
-        for j in range(seq, i, -1):
+    k = 0
+    while k < seq:
+        last = seq
+        for j in range(seq, k, -1):
             if a[j-1] > a[j]:
                 a[j-1], a[j] = a[j], a[j-1]
+                last = a[j]
+        k = last
 
 
 # 쉐이커 정렬

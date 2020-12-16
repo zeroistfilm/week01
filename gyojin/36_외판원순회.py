@@ -23,6 +23,8 @@ minPath = 10000000
 def tsp(start: int, pos: int, cost: int):
     global minPath, visit
 
+    # print(start, pos, cost, visit, minPath)
+
     if pos == start and all(visit) is True:
         minPath = min(cost, minPath)
 
@@ -35,4 +37,9 @@ def tsp(start: int, pos: int, cost: int):
 
 
 tsp(0, 0, 0)
-print(minPath)
+# minPathList = [0] * n
+# for i in range(n):
+#     tsp(i, i, 0)
+#     minPathList[i] = minPath
+#
+# print(minPathList)
