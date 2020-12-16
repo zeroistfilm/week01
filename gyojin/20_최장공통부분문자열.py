@@ -1,28 +1,35 @@
 
 
-inp = input()
-comp = input()
-ans = 0
-pos = 0
-ansStr = ''
-test = [[0] * (len(comp) + 1)] * (len(inp) + 1)
+# inp = input()
+# compare = input()
+# short, long = sorted([inp, compare], key=lambda x: len(x))
+#
+# ans = 0
+# pos = 0
+# test = [[0] * (len(compare) + 1) for _ in range(len(inp) + 1)]
 
-for i in range(1, len(inp)+1):
-    for j in range(1, len(comp)+1):
-        if inp[i-1] == comp[j-1]:
-            test[i][j] = test[i-1][j-1] + 1
-            if ans < test[i][j]:
-                ans = test[i][j]
-                print(ans)
-                pos = j - 1
+# for i in range(1, len(inp) + 1):
+#     for j in range(1, len(compare) + 1):
+#         if inp[i-1] == compare[j-1]:
+#             test[i][j] = test[i-1][j-1] + 1
+#             if ans < test[i][j]:
+#                 ans = test[i][j]
+#                 pos = j
 
-
-if pos >= 0:
-    for i in range(ans-1, -1, -1):
-        ansStr += comp[pos - i]
-
-print(ans)
-print(ansStr)
+# for i in range(len(long)):
+#     for j in range(len(short)):
+#         if long[i] == short[j]:
+#             continue
+#         else:
+#             ans = max(ans, j-i)
+#             # print(ans)
+#             pos = j+1
+#
+# if pos >= 0:
+#     print(ans)
+#     print(compare[pos-ans:pos])
+# else:
+#     print(ans)
 
 
 
@@ -69,3 +76,27 @@ print(ansStr)
 #                 str += compare_name[pos - i]
 #             str = "".join(str)
 #             print("  매칭된 문자열 : {}\n".format(str))
+
+inp = input()
+compare = input()
+word = inp + '$' + compare
+# short, long = sorted([inp, compare], key=lambda x: len(x))
+
+ans = 0
+pos = 0
+
+n = len(word)
+sa = [0] * n
+S = []
+for i in range(n):
+    S.append(word[n-i-1:])
+
+S = sorted(S)
+
+
+# def suffix_array(a: str, b: str):
+#     if pos[i] != pos[j]:
+#         return pos[i] > pos[j]
+#     i += d
+#     j += d
+#     return
