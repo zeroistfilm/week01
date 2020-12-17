@@ -2,6 +2,7 @@
 
 N = int(input())
 count=0
+
 origin=N
 def slice(N,count):
 
