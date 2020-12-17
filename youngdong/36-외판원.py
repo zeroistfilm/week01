@@ -14,24 +14,27 @@ for i in range(N):
 visit=[False for i in range(N)]
 
 current=[]
-mincost=9999999999
+mincost=sys.maxsize
 def dfs(x):
     global cost,mincost
     visit[x]=True
     current.append(x)
     #print(x,'에 방문')
 
-    if len(current) == N:
-        cost += pays[x][0]
-        if mincost > cost:
-            mincost = cost
-        cost -= pays[x][0]
-        return
-
     for i in range(N):
         if pays[x][i]!=0 and visit[i]==False:
             cost+=pays[x][i]
             dfs(i)
+            if len(current)==N:
+
+                if pays[i][0]!=0:
+
+                    cost+=pays[i][0]
+                    print(current,cost)
+                    if mincost>cost:
+                        mincost = cost
+                    cost -= pays[i][0]
+
 
             visit[i] = False
             cost -= pays[x][i]
